@@ -12,44 +12,13 @@ struct ListView: View {
         
         NavigationStack {
             
-            List {
+            List(allLandmarks) { currentLandmark in
                 
                 NavigationLink {
-                    DetailView(item: sudburyNickel)
+                    DetailView(item: currentLandmark)
                 } label: {
-                    Text(sudburyNickel.name)
+                    Text(currentLandmark.name)
                 }
-
-                NavigationLink {
-                    DetailView(item: niagaraFalls)
-                } label: {
-                    Text(niagaraFalls.name)
-                }
-
-                NavigationLink {
-                    DetailView(item: cnTower)
-                } label: {
-                    Text(cnTower.name)
-                }
-
-                NavigationLink {
-                    DetailView(item: rom)
-                } label: {
-                    Text(rom.name)
-                }
-
-                NavigationLink {
-                    DetailView(item: wonderland)
-                } label: {
-                    Text(wonderland.name)
-                }
-
-                NavigationLink {
-                    DetailView(item: kawarthas)
-                } label: {
-                    Text(kawarthas.name)
-                }
-
                 
             }
             .navigationTitle("Landmarks")
