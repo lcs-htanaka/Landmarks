@@ -8,11 +8,44 @@
 import SwiftUI
 
 struct DetailView: View {
+    
+    //MARK: STORED PROPERTIES
+    let item: Landmark
+    
+    //MARK: COMPUTED PROPERTIES
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            Image(item.image)
+                .resizable()
+                .scaledToFit()
+            
+            HStack {
+                    Image(systemName: item.isRecommended == true ? "hand.thumbsup.fill" : "hand.thumbsdown")
+
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 20)
+                    .padding(5)
+                
+                Spacer()
+            }
+            .padding(.horizontal)
+            
+            Text(item.description)
+            .padding(.horizontal)
+        }
+        .navigationTitle(item.name)
     }
 }
 
 #Preview {
-    DetailView()
+    NavigationStack {
+        DetailView(item: rom)
+    }
+}
+
+#Preview {
+    NavigationStack {
+        DetailView(item: sudburyNickel)
+    }
 }
