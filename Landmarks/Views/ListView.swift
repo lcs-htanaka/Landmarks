@@ -17,7 +17,7 @@ struct ListView: View {
                 NavigationLink {
                     DetailView(item: currentLandmark)
                 } label: {
-                    Text(currentLandmark.name)
+                    ListItemView(item: currentLandmark)
                 }
                 
             }
