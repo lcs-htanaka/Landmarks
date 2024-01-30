@@ -13,7 +13,8 @@ struct GalleryView: View {
         
         NavigationStack {
             
-            List(allLandmarks) { currentLandmark in
+            ForEach(allLandmarks) { currentLandmark in
+       
                 
                 NavigationLink {
                     DetailView(item: currentLandmark)
